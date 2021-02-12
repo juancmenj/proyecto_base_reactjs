@@ -1,2 +1,2 @@
 # proyecto_base_reactjs
-Pyecto base ReactJs
+Proyecto base en React Js
