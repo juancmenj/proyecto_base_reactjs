@@ -1,19 +1,18 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
+import { Routes, Route } from "react-router-dom";
 import { routeCodes } from "./routesConfig";
 import Home from "../Views/Home";
+import Pricing from "../Views/Pricing";
+import Catalog from "../Views/Catalog";
 
-function Routes() {
+function AllRoutes() {
   return (
-    <Switch>
-      <Route exact path={routeCodes.HOMEPAGE} component={Home} />
-    </Switch>
+    <Routes>
+      <Route exact path={routeCodes.HOMEPAGE} element={<Home />} />
+      <Route exact path={routeCodes.PRICING} element={<Pricing />} />
+      <Route exact path={routeCodes.CATALOG} element={<Catalog />} />
+    </Routes>
   );
 }
 
-Routes.propTypes = {
-  location: PropTypes.object
-};
-
-export default Routes;
+export default AllRoutes;

@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Routes from "./js/Routes/Routes";
+import AllRoutes from "./js/Routes/Routes";
 import { BrowserRouter } from "react-router-dom";
+
+import { Provider } from 'react-redux';
+import store from './js/Redux/store';
 
 function App() {
 
   function render() {
     return (
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <AllRoutes />
+        </BrowserRouter>
+      </Provider>
     );
   }
 

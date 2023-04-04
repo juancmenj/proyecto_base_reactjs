@@ -1,18 +1,17 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import "./Catalog.scss";
 import Menu from "../../components/Menu/Menu";
-
-import "./Home.scss";
+import PropTypes from "prop-types";
 
 //init props
-Home.propTypes = {};
+Catalog.propTypes = {};
 
-export default function Home(props = {}) {
+export default function Catalog(props = {}) {
   function render() {
     return (
       <div className="mainWrapper">
         <Menu />
-        <div>Hola Home</div>
+        <div>Hola Catalog</div>
       </div>
     );
   }
