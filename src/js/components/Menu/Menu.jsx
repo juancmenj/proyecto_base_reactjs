@@ -23,11 +23,11 @@ import { useLocation } from "react-router-dom";
 //init props
 Menu.propTypes = {};
 
-function Menu(props = {}) {
+export default function Menu(props = {}) {
   let location = useLocation();
 
   useEffect(() => {
-    clickHandlerActive(routeCodes.PRICING); //active option default
+    clickHandlerActive(routeCodes.HOMEPAGE); //active option default
   }, []);
 
   function clickHandlerActive(route) {
@@ -51,7 +51,7 @@ function Menu(props = {}) {
     const redes = menuLiterals && menuLiterals.redes;
 
     return (
-      <Navbar collapseOnSelect expand="md" sticky="top">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className={"yellow_bg"}>
         <Container>
           <Navbar.Brand as={NavLink} to={routeCodes.HOMEPAGE} className={"branding"}>
             <Image
@@ -62,8 +62,8 @@ function Menu(props = {}) {
               alt={name}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav ">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto routes">
               {
                 routes && routes.map((el, index) => {
@@ -110,11 +110,9 @@ function Menu(props = {}) {
             </div>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar >
     );
   }
 
   return render();
 }
-
-export default Menu;

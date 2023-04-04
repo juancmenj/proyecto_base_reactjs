@@ -2,11 +2,11 @@ export const menuLiterals = {
   name: "A&M Ingenieros",
   routes:[
     {
-      label: "¿Quienes somos?",
+      label: "Precios",
       url: "/pricing"
     },
     {
-      label: "Servicios",
+      label: "Catalogo",
       url: "/catalog"
     },
     

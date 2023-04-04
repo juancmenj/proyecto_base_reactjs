@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Menu from "../../components/Menu/Menu";
 
+import { Button } from 'react-bootstrap';
+
 import "./Home.scss";
 
 //init props
@@ -13,6 +15,7 @@ export default function Home(props = {}) {
       <div className="mainWrapper">
         <Menu />
         <div>Hola Home</div>
+        <Button>Cerrar</Button>
       </div>
     );
   }
