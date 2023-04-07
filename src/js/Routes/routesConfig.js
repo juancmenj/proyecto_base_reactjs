@@ -4,5 +4,6 @@ export const routeCodes = {
     HOMEPAGE: publicPath,
     SIGNIN: `${publicPath}signIn`,
     PRICING: `${publicPath}pricing`,
-    CATALOG: `${publicPath}catalog`
+    CATALOG: `${publicPath}catalog`,
+    NOT_FOUND: '*'
 };

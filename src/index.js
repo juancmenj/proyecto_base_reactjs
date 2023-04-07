@@ -1,27 +1,19 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import AllRoutes from "./js/Routes/Routes";
-import { BrowserRouter } from "react-router-dom";
-
+import React, { } from "react";
+import { createRoot } from "react-dom/client";
+import Routes from "./js/Routes/Routes";
+//redux init
 import { Provider } from 'react-redux';
 import store from './js/Redux/store';
-
+//boostraps
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
-
-  function render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <AllRoutes />
-        </BrowserRouter>
-      </Provider>
-    );
-  }
-
-  return render();
+  return (
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+  );
 }
 
-const wrapper = document.getElementById("root");
-ReactDOM.render(<App />, wrapper);
+createRoot(document.getElementById("root")).render(<App />);
+

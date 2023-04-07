@@ -1,18 +1,31 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { routeCodes } from "./routesConfig";
+//views
 import Home from "../Views/Home";
 import Pricing from "../Views/Pricing";
 import Catalog from "../Views/Catalog";
+import NotFound from "../Views/NotFound";
 
-function AllRoutes() {
-  return (
-    <Routes>
-      <Route exact path={routeCodes.HOMEPAGE} element={<Home />} />
-      <Route exact path={routeCodes.PRICING} element={<Pricing />} />
-      <Route exact path={routeCodes.CATALOG} element={<Catalog />} />
-    </Routes>
-  );
+export default function Routes() {
+  const routes = createBrowserRouter([
+    {
+      path: routeCodes.HOMEPAGE,
+      element: <Home />
+    },
+    {
+      path: routeCodes.PRICING,
+      element: <Pricing />
+    },
+    {
+      path: routeCodes.CATALOG,
+      element: <Catalog />
+    },
+    {
+      path: routeCodes.NOT_FOUND,
+      element: <NotFound />
+    }
+  ]);
+
+  return <RouterProvider router={routes} />;
 }
-
-export default AllRoutes;

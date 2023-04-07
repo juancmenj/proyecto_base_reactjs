@@ -1,15 +1,30 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect, useRef } from "react";
+//import PropTypes from "prop-types";2
+//redux
+import { connect } from "react-redux";
+//actions
+import { getHomeSuccess } from "../../Redux/Actions/home";
+import { useDispatch } from "react-redux";
 import Menu from "../../components/Menu/Menu";
-
 import { Button } from 'react-bootstrap';
 
 import "./Home.scss";
 
+export default connect(state => {
+})(Home);
+
+
 //init props
 Home.propTypes = {};
 
-export default function Home(props = {}) {
+function Home(props = {}) {
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    debugger
+    dispatch(getHomeSuccess("success"));
+  }, [])
+
   function render() {
     return (
       <div className="mainWrapper">
