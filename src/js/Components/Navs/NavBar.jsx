@@ -1,11 +1,11 @@
 import React, { } from "react";
-import "./Menu.scss";
+import "./NavBar.scss";
 import classnames from "classnames";
 import { menuLiterals } from "../../Literals/menu";
 //import PropTypes from "prop-types";
 import { routeCodes } from "../../Routes/routesConfig";
 import { NavLink } from "react-router-dom";
-import urlImgLogo from "../../../assets/dobleCheck.png";
+import urlImgLogo from "../../../assets/box.png";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -19,9 +19,9 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 library.add(fab, fas, far);
 
 //init props
-Menu.propTypes = {};
+NavBar.propTypes = {};
 
-export default function Menu(props = {}) {
+export default function NavBar(props = {}) {
   function redirectBlanck(url) {
     window.open(url, '_blank');
   }
@@ -37,11 +37,11 @@ export default function Menu(props = {}) {
           <Navbar.Brand as={NavLink} to={routeCodes.HOMEPAGE} className={"branding"}>
             <Image
               src={urlImgLogo}
-              width="120"
+              width="32"
               fluid
               className="d-inline-block align-top"
               alt={name}
-            />
+            />FULLBox
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -3,6 +3,7 @@ const path = require("path");
 const buildPath = path.resolve(__dirname, "./dist");
 
 module.exports = {
+  mode: "development",
   module: {
     rules: [
       {
@@ -55,7 +56,6 @@ module.exports = {
       maxModules: 0
     }
   },
-
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",

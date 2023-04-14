@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { } from "react";
 import "./Pricing.scss";
-import Menu from "../../components/Menu/Menu";
+import NavBar from "../../Components/Navs/NavBar";
 import PropTypes from "prop-types";
 
 //init props
@@ -10,7 +10,7 @@ export default function Pricing(props = {}) {
   function render() {
     return (
       <div className="mainWrapper">
-        <Menu />
+        <NavBar />
         <div>Hola Pricing</div>
       </div>
     );

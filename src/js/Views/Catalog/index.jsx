@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Catalog.scss";
-import Menu from "../../components/Menu/Menu";
+import NavBar from "../../Components/Navs/NavBar";
 import PropTypes from "prop-types";
 
 //init props
@@ -10,7 +10,7 @@ export default function Catalog(props = {}) {
   function render() {
     return (
       <div className="mainWrapper">
-        <Menu />
+        <NavBar />
         <div>Hola Catalog</div>
       </div>
     );
