@@ -1,5 +1,4 @@
-
-export function getHomeRequest(payload={}) {
+export function getNavBarRequest(payload={}) {
   return {
     method: 'get',
     headers: { "content-type": "application/json" },

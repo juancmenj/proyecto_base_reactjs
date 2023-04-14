@@ -67,7 +67,7 @@ export default function Home(props = {}) {
                 </Fragment>
               }
               {
-                !homeDataError?.success && <Container>
+                !homeDataSuccess?.success && !homeDataError?.success && <Container>
                   <Row>
                     <Col sm={12}><div className="verticalAlingWrapper"><MdBugReport size={`4rem`} />{homeDataError?.error}</div></Col>
                   </Row>

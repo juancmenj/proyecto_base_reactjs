@@ -1,4 +1,4 @@
-import React, { } from "react";
+import React, { useEffect } from "react";
 import "./NavBar.scss";
 import classnames from "classnames";
 import { menuLiterals } from "../../Literals/menu";
@@ -9,7 +9,14 @@ import urlImgLogo from "../../../assets/box.png";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
+
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { setNavBarSuccess } from "../../Redux/Reducers/navBar";
+import { getNavBarData } from "../../Redux/Selectors/navBar";
+//logics
+import { navBarLogics } from "../../Logics/navBar";
 //@fortawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,6 +29,21 @@ library.add(fab, fas, far);
 NavBar.propTypes = {};
 
 export default function NavBar(props = {}) {
+  const dispatch = useDispatch();
+  const navBarSuccess = useSelector(getNavBarData);
+
+  useEffect(() => {
+    navBarLogics({ successCallback, errorCallback }); //@params(callback, payload)
+  }, []);
+
+  function successCallback(data) {
+    dispatch(setNavBarSuccess(data));
+  }
+
+  function errorCallback(error) {
+    return;
+  }
+
   function redirectBlanck(url) {
     window.open(url, '_blank');
   }
@@ -67,7 +89,7 @@ export default function NavBar(props = {}) {
               {
                 redes && redes.map((el, index) => {
                   const redesClass = classnames("menu-redes-icon", el.class);
-                  
+
                   return (
                     <div
                       id={"redes" + index}
